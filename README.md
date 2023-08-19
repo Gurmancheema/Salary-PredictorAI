@@ -1,4 +1,4 @@
-# 1. Importing Libraries & Packages
+# 1. Importing Libraries & Packages 📚📦
 
 
 ```python
@@ -10,7 +10,7 @@ import warnings
 warnings.filterwarnings('ignore')
 ```
 
-# 2. Data Import & Preview
+# 2. Data Import & Preview 📊👀
 
 
 ```python
@@ -122,7 +122,7 @@ df.head()
 df.drop('Unnamed: 0',axis=1,inplace=True)
 ```
 
-# 3. Data Summary
+# 3. Data Summary 📊📋
 
 
 ```python
@@ -235,7 +235,7 @@ print('Total Rows  : ',df.shape[0] , '\nTotal Columns : ',df.shape[1])
 
 ### 3.2 We got the statistics of the numerical columns as well as the shape/size of dataset.
 
-# 4. Data Cleaning
+# 4. Data Cleaning 🧹🧼
 
 ### 4.1 Checking for missing values & dealing with them accordingly
 
@@ -438,7 +438,7 @@ df.isnull().sum()
 
 
 
-# 5 Exploratory Data Analysis (EDA)
+# 5 Exploratory Data Analysis (EDA) 🔍📊
 
 ### 5.1 Let's start by exploring the distribution of salary range in the dataset
 
@@ -657,7 +657,7 @@ sb.barplot(data = education_gender, x='Race', y='Salary',hue ='Education Level')
     
 
 
-# 6. Dataset Preparation
+# 6. Dataset Preparation 📁🔧
 
 
 ```python
@@ -2504,7 +2504,7 @@ X_test_df
 
 
 
-# 7. Model Training
+# 7. Model Training 🧠🏋️‍♂️
 
 ## As it is a regression problem involving many categorical variables, I'll use RandomForest regressor for model training.
 
@@ -2536,7 +2536,7 @@ rfr.fit(X_train_df,Y_train)
 predictions = rfr.predict(X_test_df)
 ```
 
-# 8. Model Evaluation
+# 8. Model Evaluation 📊🔍
 
 
 ```python
@@ -2569,7 +2569,7 @@ sb.regplot(y=predictions, x=Y_test);
     
 
 
-# 9. Model Evaluation by User Input
+# 9. Model Evaluation by User Input 📊🔍👤
 
 ### 9.1 User Input
 
@@ -2685,7 +2685,7 @@ print("The predicted salary for this individual is : ${:,.2f}".format(round(samp
     The predicted salary for this individual is : $73,692.88
     
 
-# 10 Conclusions
+# 10 Conclusions 📝🔍
 
 ### &#x1F680;From the EDA, we can bring out these conclusions : 
 
@@ -2711,7 +2711,7 @@ print("The predicted salary for this individual is : ${:,.2f}".format(round(samp
 
 #### &#x1F449; Testing with sample user data evaluates the preprocessing of encoder as well as the trained model's prediction capability #### 
 
-# 11. Next Steps
+# 11. Next Steps ➡️🔜
 
 #### &#x1F449; Creating a front end Web app using Flask or Streamlit framework #### 
 
