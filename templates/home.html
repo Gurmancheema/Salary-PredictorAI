@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Predictor AI</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0F4C75, #3282B8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      border-radius: 15px;
+      padding: 3rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"], select {
+      padding: 0.8rem;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box; /* Ensure consistent box sizing */
+    }
+
+    select {
+      appearance: none; /* Remove default arrow icon in some browsers */
+      background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%230F4C75"><polygon points="6,0 0,12 12,12"></polygon></svg>') no-repeat right 10px center;
+      background-size: 15px;
+    }
+
+    .btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background-color: #3282B8;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 25px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #1B4F72;
+    }
+
+    .result {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #dbe5eb;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Salary Predictor - AI</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_api') }}" method="post">
+      <input type="text" name="Age" placeholder="Age" required="required" /><br>
+      <select name="Gender" required="required">
+        <option value="" disabled selected>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select><br>
+      <select name="Education Level" required="required">
+        <option value="" disabled selected>Education Level</option>
+        <option value="High School">High School</option>
+        <option value="Bachelor's">Bachelor's Degree</option>
+        <option value="Master's">Master's Degree</option>
+        <option value="PhD">PhD</option>
+        <!-- Add more options as needed -->
+      </select><br>
+      <input type="text" name="Job Title" placeholder="Job Title" required="required" /><br>
+      <input type="text" name="Years of Experience" placeholder="Years of Experience" required="required" /><br>
+      <select name="Country" required="required">
+        <option value="" disabled selected>Country</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="China">China</option>
+        <option value="Australia">Australia</option>
+        <!-- Add more options as needed -->
+      </select><br>
+      <select name="Race" required="required">
+        <option value="" disabled selected>Race</option>
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+        <option value="Asian">Asian</option>
+        <option value="Korean">Korean</option>
+        <option value="Hispanic">Hispanic</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Australian">Australian</option>
+        <option value="Welsh">Welsh</option>
+        <option value="Afircan American">Afircan American</option>
+        <option value="Mixed">Mixed</option>
+
+        <!-- Add more options as needed -->
+      </select><br>
+
+      <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <div class="result">{{ prediction_text }}</div>
+  </div>
+</body>
+</html>
